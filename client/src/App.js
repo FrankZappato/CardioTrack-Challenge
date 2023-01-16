@@ -1,11 +1,16 @@
 import './App.css';
-import GeneralLayout from './components/GeneralLayout/GeneralLayout';
+import { Provider } from 'react-redux';
+import store from './store/store'
+import { BrowserRouter, } from 'react-router-dom';
+import { Routes } from './Routes';
 
 function App() {
   return (
-    <div className="App">
-      <GeneralLayout children={'App'} />
-    </div>
+    <Provider store={store}>
+      <BrowserRouter >
+        <Routes />
+      </BrowserRouter>
+    </Provider>
   );
 }
 
